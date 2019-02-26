@@ -15,5 +15,10 @@
    php artisan migrate
 - Configurar arquivo .env
 - Ajeitar config/AdminLTE
+- Criar as Models com as Migrations
+   php artisan make:model [nome-da-model] -m
+- Criar Controllers
+   php artisan make:controller [nome-controller]
+- Criar as viwers
 
 

@@ -11,6 +11,12 @@
 |
 */
 
+Route::post('funcionarios', 'FuncionariosController@cadFuncionario')->name('cad.func');
+Route::get('funcionarios', 'FuncionariosController@index')->name('funcionarios');
+
+Route::post('departamentos', 'DepartamentosController@cadDepartamento')->name('cad.depart');
+Route::get('departamentos', 'DepartamentosController@index')->name('cadastro.departamentos');
+
 Route::get('/', function () {
     return view('welcome');
 });
