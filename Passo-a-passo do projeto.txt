@@ -1,0 +1,19 @@
+-> Iniciando projeto Aleff 2
+
+- Instalando projeto laravel
+   composer create-project --prefer-dist laravel/laravel [nome-projeto]
+- Instalar AdminLTE - link: https://github.com/jeroennoten/Laravel-AdminLTE
+   composer require jeroennoten/laravel-adminlte
+  -Publish assets
+   php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=assets
+   php artisan make:adminlte
+  -Configuration
+   php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=config
+- Fazer o upload do projeto pro git
+- Criar estrutura de banco de dados
+- Criar banco de dados no sistema
+   php artisan migrate
+- Configurar arquivo .env
+- Ajeitar config/AdminLTE
+
+
