@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('movimentacoes', 'MovimentacoesController@confirmMovimentacoes')->name('confirm.movimentacoes');
+Route::get('movimentacoes', 'MovimentacoesController@index')->name('movimentacoes');
 
 Route::post('funcionarios', 'FuncionariosController@cadFuncionario')->name('cad.func');
 Route::get('funcionarios', 'FuncionariosController@index')->name('funcionarios');

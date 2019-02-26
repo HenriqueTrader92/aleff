@@ -11,12 +11,12 @@
    php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=config
 - Fazer o upload do projeto pro git
 - Criar estrutura de banco de dados
-- Criar banco de dados no sistema
-   php artisan migrate
 - Configurar arquivo .env
 - Ajeitar config/AdminLTE
 - Criar as Models com as Migrations
    php artisan make:model [nome-da-model] -m
+- Criar banco de dados no sistema
+   php artisan migrate
 - Criar Controllers
    php artisan make:controller [nome-controller]
 - Criar as viwers

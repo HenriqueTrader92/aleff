@@ -13,8 +13,12 @@ class CreateFuncDepartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('func__departs', function (Blueprint $table) {
+        Schema::create('func_departs', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_func')->unsigned();
+            $table->foreign('id_func')->references('id')->on('funcionarios')->onDelete('cascade');
+            $table->integer('id_depart')->unsigned();
+            $table->foreign('id_depart')->references('id')->on('departamentos')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateFuncDepartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('func__departs');
+        Schema::dropIfExists('func_departs');
     }
 }

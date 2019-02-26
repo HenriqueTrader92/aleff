@@ -145,6 +145,11 @@ return [
                     'text' => 'Movimentações',
                     'url'  => 'movimentacoes',
                     'icon' => 'money',
+                ],
+                [
+                    'text' => 'Historico',
+                    'url'  => 'historico',
+                    'icon' => 'history',
                 ]
             ]
         ],

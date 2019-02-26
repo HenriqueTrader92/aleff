@@ -26,4 +26,11 @@ class Departamentos extends Model
             'id_depart'
         );
     }
+
+    public function getSender($sender)
+    {
+        return $this->where('name', 'LIKE', "%$sender%")
+                    ->get()
+                    ->first();
+    }
 }
