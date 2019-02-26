@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Saldo')
+@section('title', 'Movimentação')
 
 @section('content_header')
-    <h1>Saldo</h1>
+    <h1>Movimentação</h1>
 
     <ol class="breadcrumb">
         <li><a href="">dashboard</a></li>
@@ -15,10 +15,7 @@
 @section('content')
     <div class="box">
         <div class="box-header">
-            <!-- <a href="{{ route('') }}" class="btn btn-primary"> <i class="fa fa-arrow-circle-right"></i> Depositar</a>
-            @if($amount >0)
-                <a href="{{ route('') }}" class="btn btn-danger"> <i class="fa fa-arrow-circle-right"></i> Sacar</a>
-            @endif -->
+            <a href="{{ route('movimentacao.deposit') }}" class="btn btn-primary"> <i class="fa fa-arrow-circle-right"></i> Recarregar</a>
         </div>
         <div class="box-body">
         @include('financeiro.includes.alerts')

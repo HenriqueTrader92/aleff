@@ -29,4 +29,25 @@ class MovimentacoesController extends Controller
 
         return view('financeiro.movimentacao-confirmada', compact('sender', 'valor_depart')); 
     }
+
+    public function deposit()
+    {
+        return view('financeiro.deposit');
+    }
+
+    public function depositStore(Request $request)
+    {
+
+        dd($request->all());
+        $balance = auth()->user()->balance()->firstOrCreate([]);
+        $response = $balance->deposit($request->valor);
+
+        if($response['success'])
+            return redirect()
+                ->route('admin.balance')
+                ->with('success', $response['message']);
+        return redirect()
+                ->back()
+                ->with('error', $response['message']);
+    }
 }

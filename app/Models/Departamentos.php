@@ -33,4 +33,40 @@ class Departamentos extends Model
                     ->get()
                     ->first();
     }
+
+    public function deposit(float $valor) : Array
+    {
+        DB::beginTransaction();
+
+        $totalBefore = $this->valor ? $this->valor : 0;
+        $this->valor += number_format($valor, 2 , '.', '');
+        $deposit = $this->save();
+
+        // parou aqui...
+        $historic = auth()->user()->historics()->create([
+            'type'         => 'I',
+            'amount'       => $value,
+            'total_before' => $totalBefore,
+            'total_after'  => $this->amount,
+            'date'         => date('Ymd'),
+        ]);
+
+        if($deposit && $historic){
+
+            DB::commit();
+            
+            return [
+                    'success' => true,
+                    'message' => 'Sucesso ao recarregar'
+            ];
+        } else {
+
+                DB::rollback();
+
+                return [
+                    'success' => false,
+                    'message' => 'Falha ao recarregar'
+                ];
+        }
+    }
 }
